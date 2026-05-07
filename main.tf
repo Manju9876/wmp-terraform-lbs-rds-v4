@@ -5,6 +5,7 @@ module "database" {
   component_name = each.key
   allocated_storage = each.value["allocated_storage"]
   env            = var.env
+  db_subnets = var.db_subnets
 }
 #
 # module "apps" {

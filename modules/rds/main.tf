@@ -14,3 +14,12 @@ resource "aws_db_parameter_group" "main" {
   name = "wmp-${var.env}"
   family = "postgres16"
 }
+
+resource "aws_db_subnet_group" "main" {
+  name       = "wmp-${var.env}"
+  subnet_ids = var.db_subnets
+
+  tags = {
+    Name = "wmp-${var.env}"
+  }
+}
