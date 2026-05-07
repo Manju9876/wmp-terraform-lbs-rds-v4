@@ -1,6 +1,6 @@
 module "database" {
   for_each = var.database
-  source   = "modules/rds"
+  source   = "./modules/rds"
 
   component_name = each.key
   allocated_storage = each.value["allocated_storage"]
