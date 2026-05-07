@@ -64,11 +64,7 @@ apps = {
 
 database = {
   postgresql = {
-    instance_type = "t3.small"
-    ports = {
-      ssh        = 22
-      postgresql = 5432
-    }
+    allocated_storage = "10"
   }
 }
 
