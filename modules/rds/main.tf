@@ -14,7 +14,7 @@ resource "aws_db_subnet_group" "main" {
 
 resource "aws_db_instance" "main" {
   allocated_storage    = var.allocated_storage
-  db_name              = "default-dummy"
+  db_name              = "default_dummy"
   engine               = "postgres"
   engine_version       = "16.3"
   instance_class       = "db.t3.micro"
