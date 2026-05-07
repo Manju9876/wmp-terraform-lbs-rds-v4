@@ -60,8 +60,13 @@ resource "aws_db_instance" "main" {
 
 }
 
-# resource "null_resource" "schema_load" {
-#   provisioner "local-exec" {
-#     command = ""
-#   }
-# }
+resource "null_resource" "schema_load" {
+  provisioner "local-exec" {
+    command = <<EOF
+
+curl -o global-bundle.pem https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+PGPASSWORD='WmpUser#1234' /usr/pgsql-16/bin/psql 'host=${aws_db_instance.main.address} port=5432 dbname=default_dummy user=wmpuser sslmode=verify-full sslrootcert=./global-bundle.pem' <${path.module}/setup.sql
+
+EOF
+  }
+}
