@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    null = {
+      source  = "hashicorp/null"
+      version = "3.2.4"
+    }
+  }
+}
 resource "aws_db_parameter_group" "main" {
   name = "wmp-${var.env}"
   family = "postgres16"
@@ -50,4 +58,10 @@ resource "aws_db_instance" "main" {
   skip_final_snapshot  = true
   vpc_security_group_ids = [aws_security_group.main.id]
 
+}
+
+resource "null_resource" "schema_load" {
+  provisioner "local-exec" {
+    command = ""
+  }
 }
