@@ -60,8 +60,8 @@ resource "aws_db_instance" "main" {
 
 }
 
-resource "null_resource" "schema_load" {
-  provisioner "local-exec" {
-    command = ""
-  }
-}
+# resource "null_resource" "schema_load" {
+#   provisioner "local-exec" {
+#     command = ""
+#   }
+# }
