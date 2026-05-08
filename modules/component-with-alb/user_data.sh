@@ -8,5 +8,5 @@ ansible-pull -i localhost, \
   -U https://github.com/Manju9876/wmp-ansible-rds-v2 \
   wmp.yaml \
   -e env=${ENV} \
-  -e component_name=${COMPONENT}
-  -e aws_rds_endpoint_address=${{{ aws_rds_endpoint_address }}}
+  -e component_name=${COMPONENT} \
+  -e aws_rds_endpoint_address=${aws_rds_endpoint_address}
