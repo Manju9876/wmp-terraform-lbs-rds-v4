@@ -54,7 +54,7 @@ resource "aws_launch_template" "main" {
   name                   = "${var.component_name}-${var.env}"
   image_id               = data.aws_ami.ami.id
   instance_type          = var.instance_type
-  vpc_security_group_ids = [aws_security_group.instance.id, aws_security_group.alb.id]
+  vpc_security_group_ids = [aws_security_group.instance.id]
   user_data = base64encode(templatefile("${path.module}/user_data.sh",
     {
       ENV       = var.env
