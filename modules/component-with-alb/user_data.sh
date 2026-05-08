@@ -9,3 +9,4 @@ ansible-pull -i localhost, \
   wmp.yaml \
   -e env=${ENV} \
   -e component_name=${COMPONENT}
+  -e aws_rds_endpoint_address=${{{ aws_rds_endpoint_address }}}

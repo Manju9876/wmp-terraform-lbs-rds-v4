@@ -59,6 +59,7 @@ resource "aws_launch_template" "main" {
     {
       ENV       = var.env
       COMPONENT = var.component_name
+      aws_rds_endpoint_address = var.aws_rds_endpoint_address
     }
   ))
 

@@ -24,4 +24,5 @@ module "apps" {
   ports          = each.value["ports"]
   alb            = each.value["alb"]
   asg            = each.value["asg"]
+  aws_rds_endpoint_address = module.database.aws_rds_endpoint_address
 }
