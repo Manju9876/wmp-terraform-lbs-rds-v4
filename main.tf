@@ -17,7 +17,6 @@ module "apps" {
   vpc_id      = var.vpc_id
   alb_subnets = var.alb_subnets
 
-
   for_each                 = var.apps
   component_name           = each.key
   instance_type            = each.value["instance_type"]
