@@ -6,6 +6,6 @@ variable "dns_domain" {}
 
 variable "asg" {}
 variable "alb" {}
-variable "alb_subnets" {}
+variable "subnets" {}
 variable "vpc_id" {}
 variable "aws_rds_endpoint_address" {}
