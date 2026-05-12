@@ -9,6 +9,13 @@ resource "aws_security_group" "instance" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    from_port       = var.alb["ports"]
+    to_port         = var.alb["ports"]
+    protocol        = "TCP"
+    security_groups = [aws_security_group.alb.id]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
